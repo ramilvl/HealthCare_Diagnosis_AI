@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Diagnosis</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        h1{
+            text-align: center;
+        }
+
+        .div-2{
+            position: absolute;
+            left: 50%;
+            bottom: 45%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Healthcare Diagnosis</h1>
+    <form action="/diagnose" method="post">
+        {% for symptom in symptoms %}
+        <label for="{{ symptom }}">{{ symptom }}:</label>
+        <input type="checkbox" name="symptoms" value="{{ symptom }}">
+        {% endfor %}
+
+        <div class="div-2">
+            <input type="submit" value="Diagnose">
+        </div>
+    </form>
+</body>
+</html>
