@@ -7,12 +7,10 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Define a more complex structure for the Bayesian Network
 model = BayesianNetwork([('Flu', 'Fever'), ('Flu', 'Fatigue'), ('Fever', 'Cough'), ('Fatigue', 'Cough'),
                        ('Flu', 'Headache'), ('Flu', 'SoreThroat'), ('Fever', 'BodyAche'), ('Fatigue', 'BodyAche'),
                        ('Cough', 'ChestPain'), ('BodyAche', 'ChestPain')])
 
-# Generate a larger synthetic dataset for training
 np.random.seed(42)
 num_samples = 1000
 columns = ['Flu', 'Fever', 'Fatigue', 'Cough', 'Headache', 'SoreThroat', 'BodyAche', 'ChestPain']
@@ -40,13 +38,10 @@ for _ in range(num_samples):
                            'Headache': headache, 'SoreThroat': sore_throat, 'BodyAche': body_ache, 'ChestPain': chest_pain}
 
 
-# Save the synthetic dataset to a CSV file
 data.to_csv('synthetic_dataset_complex.csv', index=False)
 
-# Estimate CPDs (Conditional Probability Distributions)
 model.fit(data, estimator=MaximumLikelihoodEstimator)
 
-# Doing exact inference using Variable Elimination
 inference = VariableElimination(model)
 
 
@@ -59,7 +54,6 @@ def index():
 def diagnose():
     symptoms = request.form.getlist('symptoms')
 
-    # Query for the probability of having the flu given symptoms
     query_result = inference.query(variables=['Flu'], evidence=dict(zip(symptoms, [1]*len(symptoms))))
     probability = query_result.values[1]
 
@@ -69,13 +63,10 @@ def diagnose():
 
 
 if __name__ == '__main__':
-    # Load the synthetic dataset from the CSV file
     data = pd.read_csv('synthetic_dataset_complex.csv')
 
-    # Estimate CPDs (Conditional Probability Distributions)
     model.fit(data, estimator=MaximumLikelihoodEstimator)
 
-    # Doing exact inference using Variable Elimination
     inference = VariableElimination(model)
 
     app.run(debug=True)

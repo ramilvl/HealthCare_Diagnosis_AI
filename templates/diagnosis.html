@@ -4,10 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagnosis Result</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>Diagnosis Result</h1>
     <p>Diagnosis: {{ diagnosis }}</p>
     <p>Probability: {{ probability }}</p>
+
+    <canvas id="probabilityChart" width="400" height="200"></canvas>
+
+    <script>
+        var diagnosis = "{{ diagnosis }}";
+        var probability = parseFloat('{{ probability }}');
+
+        var ctx = document.getElementById('probabilityChart').getContext('2d');
+        
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Likely Flu', 'Unlikely Flu'],
+                datasets: [{
+                    label: 'Probability',
+                    data: [probability, 1 - probability],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 1
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
