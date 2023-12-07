@@ -14,6 +14,22 @@
 
     <canvas id="probabilityChart" width="400" height="200"></canvas>
 
+    <br><br>
+
+    <button onclick="showFeedback()">Provide Feedback</button>
+
+    <div id="feedback" style="display: none;">
+        <h2>Feedback and Recommendations</h2>
+        <!-- Add detailed explanations and recommendations here based on the diagnosis -->
+        {% if diagnosis == "Covid-19" %}
+            <p>Feedback related Covid-19 case!</p>
+            <p>It is advised to consult with a healthcare professional and follow safety guidelines.</p>
+        {% elif diagnosis == "Influenza" %}
+            <p>Feedback related Influenza!</p>
+            <p>Rest, stay hydrated, and consider over-the-counter medications for symptom relief.</p>
+        {% endif %}
+    </div>
+
     <script>
         var diagnosis = "{{ diagnosis }}";
         var probability = parseFloat('{{ probability }}');
@@ -47,6 +63,11 @@
                 }
             }
         });
+
+        function showFeedback() {
+            var feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.style.display = 'block';
+        }
     </script>
 </body>
 </html>
