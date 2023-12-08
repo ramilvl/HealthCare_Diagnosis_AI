@@ -4,26 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare Diagnosis</title>
-    <style>
-
-    </style>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
-    <h1>Healthcare Diagnosis</h1>
-    <form action="/diagnose" method="post">
-        {% for symptom in symptoms %}
-        <label for="{{ symptom }}">{{ symptom }}:</label>
-        <input type="checkbox" name="symptoms" value="{{ symptom }}">
-        <br>
-        {% endfor %}
 
-        <br><br>
+    <header>
+        <span class="font-poppins text-size-20px color-white" id="animated-text">Symptom Tracker: Pinpointing COVID-19 or Influenza</span>
+    </header>
 
-        <div class="div-2">
-            <input type="submit" value="Diagnose">
-        </div>
-    </form>
+    <main class="main-1">
+        <video id="video-background" autoplay muted loop>
+            <source src="../static/videoo.mp4" type="video/mp4">
+        </video>
+    </main>
+
+    <main class="main-2">
+        <img class="img" src="../static/main-2.jpg" alt="">
+        <form action="/diagnose" method="post">
+            {% for symptom in symptoms %}
+            <label class="font-poppins" for="{{ symptom }}">{{ symptom }}:</label>
+            <input class="checkboxx" type="checkbox" name="symptoms" value="{{ symptom }}">
+            <br><br>
+            {% endfor %}
+    
+            <br><br>
+    
+            <div class="div-2">
+                <input class="btn" type="submit" value="Diagnose">
+            </div>
+        </form>
+    </main>
 </body>
 </html>
