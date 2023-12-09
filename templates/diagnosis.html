@@ -6,18 +6,30 @@
     <title>Diagnosis Result</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='diagnosis.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='typhgraph.css') }}">
 </head>
 <body>
-    <h1>Diagnosis Result</h1>
-    <p>Diagnosis: {{ diagnosis }}</p>
-    <p>Probability: {{ probability }}</p>
+    <div class="img-div">
+        <img src="../static/gerb.webp" alt="">
+    </div>
+    <h1 class="text-size-18px">AZERBAIJAN REPUBLIC</h1>
+    <h1 class="text-size-18px">ADMINISTRATIVE ASSOCIATION OF MEDICAL TERRITORIAL UNITS</h1>
+    <h1 class="text-size-18px">POSSİBLE DİAGNOSTİC OUTCOME STATİSTİCS</h1>
+    <br><br><br><br>
+    <p class="font-600 text-size-22px text-align">ONLINE REFERENCE</p>
 
-    <canvas id="probabilityChart" width="400" height="200"></canvas>
+    <br><br><br>
+    <p class="font-poppins text-size-18px font-600">Diagnosis: {{ diagnosis }}</p>
+    <p class="font-poppins text-size-18px font-600">Probability: {{ probability }}</p>
+
+    <canvas id="probabilityChart" width="600" height="200"></canvas>
 
     <br><br>
 
-    <button onclick="showFeedback()">Provide Feedback</button>
+    <button class="btn cursor" onclick="showFeedback()"><span class="font-poppins">Provide Feedback</span></button>
 
+    <br><br>
     <div id="feedback" style="display: none;">
         <h2>Feedback and Recommendations</h2>
         <!-- Add detailed explanations and recommendations here based on the diagnosis -->

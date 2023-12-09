@@ -1,0 +1,27 @@
+body{
+    padding: 0px 40px;
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.img-div{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    width: 150px;
+    height: 40px;
+    background-color: rgba(0, 128, 0, 0.382);
+    border-radius: 6px;
+}
