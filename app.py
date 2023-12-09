@@ -58,6 +58,9 @@ model.fit(data, estimator=MaximumLikelihoodEstimator)
 
 inference = VariableElimination(model)
 
+@app.route('/research')
+def research():
+    return render_template('research.html')
 
 @app.route('/')
 def index():
