@@ -77,3 +77,17 @@ form{
 .btn:hover{
     background-color: rgba(0, 128, 0, 0.387);
 }
+
+
+.container{
+    width: 1340px;
+    height: 60px;
+    background-color: rgba(0, 128, 0, 0.336);
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
