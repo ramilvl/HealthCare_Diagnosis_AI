@@ -26,11 +26,12 @@
             <source src="../static/videoo.mp4" type="video/mp4">
         </video>
     </main>
-    <br><br>
+    <br><br><br><br><br><br><br><br>
 
     <main class="main-2">
-        <img class="img" src="../static/main-2.jpg" alt="">
+        <img style="height: 150vh;" class="img" src="../static/photo-3.jpg" alt="">
         <form action="/diagnose" method="post">
+            <span class="text-size-35px font-poppins font-600">Potential Symptoms</span><br><br><br><br>
             {% for symptom in symptoms %}
             <label class="font-poppins" for="{{ symptom }}">{{ symptom }}:</label>
             <input class="checkboxx" type="checkbox" name="symptoms" value="{{ symptom }}">
