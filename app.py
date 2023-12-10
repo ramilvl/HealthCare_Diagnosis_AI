@@ -71,12 +71,16 @@ def index():
 def diagnose():
     symptoms = request.form.getlist('symptoms')
 
+    if not symptoms:
+        return render_template('diagnosis.html', diagnosis="No illnesses selected", probability=None)
+
     query_result = inference.query(variables=['Flu'], evidence=dict(zip(symptoms, [1]*len(symptoms))))
     probability = query_result.values[1]
 
     diagnosis = "Covid-19" if probability > 0.5 else "Influenza"
 
     return render_template('diagnosis.html', diagnosis=diagnosis, probability=probability)
+
 
 
 if __name__ == '__main__':

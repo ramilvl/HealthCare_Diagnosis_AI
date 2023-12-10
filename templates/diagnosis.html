@@ -21,7 +21,7 @@
 
     <br><br><br>
     <p class="font-poppins text-size-18px font-600">Diagnosis: {{ diagnosis }}</p>
-    <p class="font-poppins text-size-18px font-600">Probability: {{ probability }}</p>
+    <p class="font-poppins text-size-18px font-600">Probability of Covid-19 Case: {{ probability }}</p>
 
     <canvas id="probabilityChart" width="600" height="200"></canvas>
 
@@ -32,13 +32,13 @@
     <br><br>
     <div id="feedback" style="display: none;">
         <h2>Feedback and Recommendations</h2>
-        <!-- Add detailed explanations and recommendations here based on the diagnosis -->
         {% if diagnosis == "Covid-19" %}
-            <p>Feedback related Covid-19 case!</p>
-            <p>It is advised to consult with a healthcare professional and follow safety guidelines.</p>
+            <p class="font-poppins font-600">Feedback related Potential Covid-19 Case!</p>
+            <p class="font-poppins">It is advised to consult with a healthcare professional and follow safety guidelines.</p>
         {% elif diagnosis == "Influenza" %}
-            <p>Feedback related Influenza!</p>
-            <p>Rest, stay hydrated, and consider over-the-counter medications for symptom relief.</p>
+            <p class="font-poppins font-600">Feedback related Potential Influenza Case!</p>
+            <p class="font-poppins">Remember to rest, stay hydrated, and consider over-the-counter medications for symptom relief. However, these general suggestions are not a substitute for professional medical advice, diagnosis, or treatment.
+                 If you experience severe or persistent symptoms, it is crucial to consult with a healthcare professional.</p>
         {% endif %}
     </div>
 
@@ -51,7 +51,7 @@
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Likely Flu', 'Unlikely Flu'],
+                labels: ['Covid-19 Case', 'Influenza Case'],
                 datasets: [{
                     label: 'Probability',
                     data: [probability, 1 - probability],
