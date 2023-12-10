@@ -21,6 +21,18 @@ While this system aims to provide a helpful tool for initial diagnosis, it is cr
 # Disclaimer
 This healthcare diagnosis system is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare professional for accurate and personalized guidance.
 
+# Demo
+![image](https://github.com/ramilvl/AI_Project/assets/98059442/fec66e2f-41c5-460c-b085-ae269ac93b47)
+<br><br>
+![image](https://github.com/ramilvl/AI_Project/assets/98059442/ec726279-6c43-49e4-a8d2-1b220809e1ed)
+<br><br>
+![image](https://github.com/ramilvl/AI_Project/assets/98059442/1bd5207f-2408-496a-9655-0025b6f7dc4c)
+<br><br>
+![image](https://github.com/ramilvl/AI_Project/assets/98059442/b8640e72-cf3e-46de-9c03-ad2dcdb326eb)
+
+
+
+
 # Future Feature Ideas (Improvement):
 User Authentication
 * Implement user authentication to allow users to have personalized profiles, track their symptoms over time, and receive recommendations based on their health history.
