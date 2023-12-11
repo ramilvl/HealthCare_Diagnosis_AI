@@ -1,4 +1,4 @@
-# HealthCare Diagnosis Project
+# Clinical Health Advisory and Diagnostic Documentation
 
 # Project Overview
 
@@ -28,7 +28,8 @@ This healthcare diagnosis system is not a substitute for professional medical ad
 <br><br>
 ![image](https://github.com/ramilvl/AI_Project/assets/98059442/1bd5207f-2408-496a-9655-0025b6f7dc4c)
 <br><br>
-![image](https://github.com/ramilvl/AI_Project/assets/98059442/b8640e72-cf3e-46de-9c03-ad2dcdb326eb)
+![image](https://github.com/ramilvl/AI_Project/assets/98059442/6bd20a2b-39ae-41d9-a0ee-d4332ef8563a)
+
 
 
 
