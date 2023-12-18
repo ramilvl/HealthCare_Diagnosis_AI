@@ -23,7 +23,7 @@ header {
 
 
 #video-background {
-    width: 1340px;
+    width: 1476px;
     height: 700px;
     object-fit: cover;
 }
@@ -33,7 +33,7 @@ header {
 }
 
 .main-2{
-    width: 1340px;
+    width: 1476px;
     height: 100vh;
 }
 
@@ -44,7 +44,7 @@ header {
 }
 
 .img{
-    width: 1340px;
+    width: 1476px;
     z-index: -1;
     background-repeat: none;
     object-fit: cover;
@@ -80,7 +80,7 @@ form{
 
 
 .container{
-    width: 1340px;
+    width: 1476px;
     height: 60px;
     background-color: rgba(0, 128, 0, 0.336);
     border-radius: 4px;
