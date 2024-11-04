@@ -1,0 +1,10 @@
+{
+  "name": "HealthCare_Diagnosis_AI",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "scripts": {
+    "start": "python app.py"
+  },
+  "packages": {}
+}
